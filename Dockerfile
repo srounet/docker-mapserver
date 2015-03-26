@@ -1,4 +1,4 @@
-# Tilemill for Docker
+# Mapserver for Docker
 
 FROM ubuntu:latest
 MAINTAINER Fabien Reboia<srounet@gmail.com>
