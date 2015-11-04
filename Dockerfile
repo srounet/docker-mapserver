@@ -1,6 +1,5 @@
 # Mapserver for Docker
-
-FROM ubuntu:latest
+FROM ubuntu:trusty
 MAINTAINER Fabien Reboia<srounet@gmail.com>
 
 ENV LANG C.UTF-8
@@ -83,9 +82,9 @@ COPY etc/000-default.conf /etc/apache2/sites-available/
 RUN sudo apt-get install apache2-mpm-worker
 
 # To reconcile this, the multiverse repository must be added to the apt sources.
-RUN echo 'deb http://archive.ubuntu.com/ubuntu utopic multiverse' >> /etc/apt/sources.list
-RUN echo 'deb http://archive.ubuntu.com/ubuntu utopic-updates multiverse' >> /etc/apt/sources.list
-RUN echo 'deb http://archive.ubuntu.com/ubuntu utopic-security multiverse' >> /etc/apt/sources.list
+RUN echo 'deb http://archive.ubuntu.com/ubuntu trusty multiverse' >> /etc/apt/sources.list
+RUN echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse' >> /etc/apt/sources.list
+RUN echo 'deb http://security.ubuntu.com/ubuntu trusty-security multiverse' >> /etc/apt/sources.list
 RUN sudo apt-get update
 
 # Install PHP5 and necessary modules
