@@ -1,0 +1,4 @@
+2016/04/01
+----------
+- bump harbuzz library to 1.2.4
+- remove ssh in favor of docker interactive shell

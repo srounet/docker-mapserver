@@ -18,13 +18,9 @@ Running this will build a docker image with mapserver 7
 
 ## Running docker-mapserver
 
-This image expose three ports 22 for ssh and 80 for Mapserver
+This image expose port 80 for Mapserver
 
     sudo docker run -d -P -v /usr/local/mapserver:/maps --name mapserver mapserver
-
-## Image active users
-
-The root password is `toor`.
 
 
 ## Test it
