@@ -5,6 +5,9 @@ MAINTAINER Fabien Reboia<srounet@gmail.com>
 ENV LANG C.UTF-8
 RUN update-locale LANG=C.UTF-8
 
+# Package versions
+ENV HARFBUZZ_VERSION 1.2.4
+
 # Update and upgrade system
 RUN apt-get -qq update --fix-missing && apt-get -qq --yes upgrade
 
@@ -28,9 +31,9 @@ RUN apt-get install -y \
 
 # Install libharfbuzz from source as it is not in a repository
 RUN apt-get install -y bzip2
-RUN cd /tmp && wget http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-0.9.19.tar.bz2 && \
-    tar xjf harfbuzz-0.9.19.tar.bz2 && \
-    cd harfbuzz-0.9.19 && \
+RUN cd /tmp && wget http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-$HARFBUZZ_VERSION.tar.bz2 && \
+    tar xjf harfbuzz-$HARFBUZZ_VERSION.tar.bz2 && \
+    cd harfbuzz-$HARFBUZZ_VERSION && \
     ./configure && \
     make && \
     make install && \
