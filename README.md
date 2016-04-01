@@ -22,7 +22,19 @@ This image expose port 80 for Mapserver
 
     sudo docker run -d -P -v /usr/local/mapserver:/maps --name mapserver mapserver
 
+or if you want to bind it to a custom port
+
+    sudo docker run -d -p HOST_CUSTOM_PORT:80 -v /usr/local/mapserver:/maps --name mapserver mapserver
+
+
+## Debug docker-mapserver using docker interactive shell
+
+Sometimes, you may want to run a shell within docker-mapserver, to look around, check logs and so on...
+To achieve that, you can use docker interactive shell that way:
+
+   sudo docker exec -i -t mapserver bash
+
 
 ## Test it
 
-http://HOST_IP:DOCKER_80_PORT/cgi-bin/mapserv
+http://HOST_IP:HOST_80_OR_CUSTOM_PORT/cgi-bin/mapserv
